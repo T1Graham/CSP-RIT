@@ -6,7 +6,7 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
+team_name = 'Tanner... This is my team' # Only 10 chars displayed.
 strategy_name = 'The name the team gives to this strategy'
 strategy_description = 'How does this strategy decide?'
     
@@ -17,7 +17,19 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
-
+    if len(my_history)==0:
+        return'c'
+        # betray if history was betray 1 time ago
+    elif my_history[-1]=='c' and their_history[-1]=='b':
+        return'b'
+        # betray if after 100 tries and their history shows betray on their 6th previous try
+    if len(my_history) > 100 and their_history[-6]=='b':
+        return'b'
+        
+    else:
+        return'c'
+        # otherwise colllude
+    # betray if history was betray 2 times ago
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
     # The first round between these two players is my_history[0] and their_history[0].
@@ -27,8 +39,7 @@ def move(my_history, their_history, my_score, their_score):
     # Decide whether to return 'c' or 'b'.
     
     return 'c'
-
-    
+   
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
     from this module. Prints error if return value != result.
