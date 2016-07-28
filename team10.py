@@ -26,7 +26,13 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
+    if 'b' in their_history[-1:]: # If the other player has betrayed the last round, 
+        return 'b'                # Betray.
+    else:
+        if random.random()<0.5:   # Half of the other rounds
+            return 'b'           # Betray
+        else:
+            return 'c'           # Collude other half of the time
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
