@@ -1,62 +1,80 @@
 --------------------------------------------------------------------------------
 Section 0 - Line up
 --------------------------------------------------------------------------------
-Player 0 (P0): E0, Collude
-        Always collude.
-Player 1 (P1): E1, Betray
-        Always betray.
-Player 2 (P2): E2, Alternate
-        Collude, then alternate.
-Player 3 (P3): E3, Collude but retaliate
-        Collude first round. Collude, except in a round after getting 
-        a severe punishment.
-Player 4 (P4): E4, Use early history
-        Collude first round. Compare all rounds to the previous round and 
-        assume opponent will behave the same as the first time the previous 
-        round's result occurred. If the previous round's result never has 
-        happened, collude except after being severly punished.
-Player 5 (P5): E5, Collude first 100 rounds unless betrayed. Betray 101st round forward.
-        Betray if ever betrayed.
-        If I haven't been betrayed yet, I'll betray starting with the 100th roun
-        d.
-Player 6 (P6): E6, Collude until betrayed
-        Collude first round. Collude, unless betrayed; then always betray.
-Player 7 (P7): E7, Error
-        return '', ' ', or int 4
-Player 8 (P8): Pikachu, Wild Guessing
+Player 0 (P0): Positivity, People do not like to betray others 2 times in a row
+        If the other player just betrayed, they are more likely to collude
+Player 1 (P1): Team Clare, Completely Random
+        Random Selection
+Player 2 (P2): Team 3, Colluding FTW
+        If opponent colluded last turn, I collude. Every 3 turns I betray, or wh
+        en my score is less than theirs I betray
+Player 3 (P3): E4, Probably Bad
+        Choose randomly in the first 3 rounds then betray 90% of the time
+Player 4 (P4): T5, Grudge
+        Holds a grudge
+Player 5 (P5): Eastridge, The name the team gives to this strategy
+        How does this strategy decide?
+Player 6 (P6): Team7_SK, Hedge My Bets
+        Decide what to return based on a determined average
+Player 7 (P7): WendyD, Holds a grudge, but can be forgiving
+        I start with collude. If I see a betray once in the past two moves or th
+        ree moves, I will betray. Three colludes are needed for me to collude ag
+        ain. If we a traveling this course neck to neck I will collude.
+Player 8 (P8): G4mbit, Stay True to the Doctor!, No B Twice!
+        Do not betray twice in a row. If BBC, then B because we want to see more
+         Doctor Who!
+Player 9 (P9): The name the team gives to itself, The name the team gives to this strategy
+        How does this strategy decide?
+Player 10 (P10): Tanner... This is my team, The name the team gives to this strategy
+        How does this strategy decide?
+Player 11 (P11): King Kong, Every other round the strategy switchs, KK colludes often
+        It uses a modulus to decide if its and even or odd round
+Player 12 (P12): JJ JellyJar, Betray first, strategize later, hope for luck
+        Starts off betraying then looks at round history to make a smart move
+Player 13 (P13): Pikachu, Wild Guessing
         No Strategy
 --------------------------------------------------------------------------------
 Section 1 - Player vs. Player
 --------------------------------------------------------------------------------
 Each column shows pts/round earned against each other player:
-             P0     P1     P2     P3     P4     P5     P6     P7     P8
-vs. P0 :      0    100     50      0      0     48      0   -250      0
-vs. P1 :   -500      0   -376   -377   -253   -252   -252   -250   -252
-vs. P2 :   -250    -74      0   -199   -199    -77    -77   -250   -156
-vs. P3 :      0    -74   -199      0      0    -25      0   -250      0
-vs. P4 :      0   -247   -199      0      0   -113      0   -250      0
-vs. P5 :   -243   -248   -368   -125   -120      0   -103   -250   -105
-vs. P6 :      0   -249   -371      0      0    -99      0   -250      0
-vs. P7 :   -250   -250   -250   -250   -250   -250   -250      0   -250
-vs. P8 :      0   -249   -260      0      0   -102      0   -250      0
-TOTAL  :  -1243  -1291  -1973   -951   -822   -870   -682  -2000   -763
+             P0     P1     P2     P3     P4     P5     P6     P7     P8     P9    P10    P11    P12    P13
+vs. P0 :      0   -154     -4   -246      0   -242   -201      0      0   -247      0      0   -236      0
+vs. P1 :   -154      0   -151    -60    -84    -88    -94   -295   -108   -109   -185   -200   -239   -122
+vs. P2 :     -9   -151      0   -249   -250   -245   -250     -5     -4   -240     -8     -5   -232    -92
+vs. P3 :   -250   -379   -249      0   -248   -254   -248   -500   -282   -246   -319   -375   -262   -250
+vs. P4 :      0   -356   -250   -248      0   -252   -246      0      0   -244      0      0   -244      0
+vs. P5 :   -246   -360   -241   -242   -243      0   -239   -484   -281   -242   -359   -360   -245   -243
+vs. P6 :   -201   -358   -250   -252   -252   -255      0   -500   -289   -250   -319   -378   -266   -219
+vs. P7 :      0     58     -1    100      0     96    100      0      0     47      0      0   -235      0
+vs. P8 :      0   -293     -1   -200      0   -203   -195      0      0   -194      0      0   -233      0
+vs. P9 :   -252   -281   -245   -252   -255   -247   -250   -240   -282      0   -276   -276   -245   -251
+vs. P10 :      0   -150     -3   -146      0    -80   -150      0      0   -187      0      0   -233      0
+vs. P11 :      0    -49     -1    -73      0    -68    -73      0      0   -144      0      0   -225      0
+vs. P12 :   -236   -230   -232   -229   -230   -234   -224   -239   -236   -236   -233   -230      0   -232
+vs. P13 :      0   -266    -92   -247      0   -239   -219      0      0   -246      0      0   -232      0
+TOTAL  :  -1348  -2969  -1720  -2344  -1562  -2311  -2289  -2263  -1482  -2538  -1699  -1824  -3127  -1409
 --------------------------------------------------------------------------------
 Section 2 - Leaderboard
 --------------------------------------------------------------------------------
 Average points per round:
 Team name (P#):  Score      with strategy name
-E6        (P6):        -76 points with Collude until betrayed                  
-Pikachu   (P8):        -85 points with Wild Guessing                           
-E4        (P4):        -92 points with Use early history                       
-E5        (P5):        -97 points with Collude first 100 rounds unless betrayed
-E3        (P3):       -106 points with Collude but retaliate                   
-E0        (P0):       -139 points with Collude                                 
-E1        (P1):       -144 points with Betray                                  
-E2        (P2):       -220 points with Alternate                               
-E7        (P7):       -223 points with Error                                   
+Positivity(P0):        -97 points with People do not like to betray others 2 ti
+Pikachu   (P13):       -101 points with Wild Guessing                           
+G4mbit    (P8):       -106 points with Stay True to the Doctor!, No B Twice!   
+T5        (P4):       -112 points with Grudge                                  
+Tanner... (P10):       -122 points with The name the team gives to this strategy
+Team 3    (P2):       -123 points with Colluding FTW                           
+King Kong (P11):       -131 points with Every other round the strategy switchs, 
+WendyD    (P7):       -162 points with Holds a grudge, but can be forgiving    
+Team7_SK  (P6):       -164 points with Hedge My Bets                           
+Eastridge (P5):       -166 points with The name the team gives to this strategy
+E4        (P3):       -168 points with Probably Bad                            
+The name t(P9):       -182 points with The name the team gives to this strategy
+Team Clare(P1):       -213 points with Completely Random                       
+JJ JellyJa(P12):       -224 points with Betray first, strategize later, hope for
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-example0--------------------------------------------------------------------------------
+team1--------------------------------------------------------------------------------
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -65,112 +83,222 @@ example0------------------------------------------------------------------------
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'E0'
-strategy_name = 'Collude'
-strategy_description = 'Always collude.'
-    
+team_name = 'Positivity' # Only 10 chars displayed.
+strategy_name = 'People do not like to betray others 2 times in a row'
+strategy_description = 'If the other player just betrayed, they are more likely to collude'
+import random    
 def move(my_history, their_history, my_score, their_score):
-    '''Make my move based on the history with this player.
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
     
-    history: a string with one letter (c or b) per round that has been played with this opponent.
-    their_history: a string of the same length as history, possibly empty. 
-    The first round between these two players is my_history[0] and their_history[0]
-    The most recent round is my_history[-1] and their_history[-1]
-    
-    Returns 'c' or 'b' for collude or betray.
+    Make my move.
+    Returns 'c' or 'b'. 
     '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
     
-    # This player always colludes.
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    if len(my_history)==0:
+        return 'c'      #let's start out positive
+    if their_history[-1]=='b':
+        return 'b'          #counting on human nature to minimize back to back betrayals
     return 'c'
-    --------------------------------------------------------------------------------
-example1--------------------------------------------------------------------------------
-####
-# Each team's file must define four tokens:
-#     team_name: a string
-#     strategy_name: a string
-#     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-####
-
-team_name = 'E1'
-strategy_name = 'Betray'
-strategy_description = 'Always betray.'
     
-def move(my_history, their_history, my_score, their_score):
-    '''Make my move based on the history with this player.
-    
-    history: a string with one letter (c or b) per round that has been played with this opponent.
-    their_history: a string of the same length as history, possibly empty. 
-    The first round between these two players is my_history[0] and their_history[0]
-    The most recent round is my_history[-1] and their_history[-1]
-    
-    Returns 'c' or 'b' for collude or betray.
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
     '''
-    
-    #This example player always betrays.      
-    return 'b'
---------------------------------------------------------------------------------
-example2--------------------------------------------------------------------------------
-####
-# Each team's file must define four tokens:
-#     team_name: a string
-#     strategy_name: a string
-#     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-####
-
-team_name = 'E2'
-strategy_name = 'Alternate'
-strategy_description = 'Collude, then alternate.'
-    
-def move(my_history, their_history, my_score, their_score):
-    '''Make my move based on the history with this player.
-    
-    history: a string with one letter (c or b) per round that has been played with this opponent.
-    their_history: a string of the same length as history, possibly empty. 
-    The first round between these two players is my_history[0] and their_history[0]
-    The most recent round is my_history[-1] and their_history[-1]
-    
-    Returns 'c' or 'b' for collude or betray.
-    '''
-    # This player colludes on even numbered rounds (first round is round #0).
-    if len(my_history)%2 == 0:
-        return 'c'
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
     else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team2--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'Team Clare' # Only 10 chars displayed.
+strategy_name = 'Completely Random'
+strategy_description = 'Random Selection'
+import random 
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    
+    return random.choice(['b','c'])
+
+    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team3--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'Team 3' 
+strategy_name = "Colluding FTW"
+strategy_description = 'If opponent colluded last turn, I collude. Every 3 turns I betray, or when my score is less than theirs I betray'
+
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    roundNumber = len(my_history)
+       
+    if roundNumber > 1 and their_history[-1] == 'c':
+        return 'c'
+    
+          
+    if roundNumber % 3 == 0:
         return 'b'
-    --------------------------------------------------------------------------------
-example3--------------------------------------------------------------------------------
-####
-# Each team's file must define four tokens:
-#     team_name: a string
-#     strategy_name: a string
-#     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-####
+        
+        
+    if my_score < their_score: 
+        return 'b' 
 
-team_name = 'E3'
-strategy_name = 'Collude but retaliate'
-strategy_description = '''\
-Collude first round. Collude, except in a round after getting 
-a severe punishment.'''
     
-def move(my_history, their_history, my_score, their_score):
-    '''Make my move based on the history with this player.
-    
-    history: a string with one letter (c or b) per round that has been played with this opponent.
-    their_history: a string of the same length as history, possibly empty. 
-    The first round between these two players is my_history[0] and their_history[0]
-    The most recent round is my_history[-1] and their_history[-1]
-    
-    Returns 'c' or 'b' for collude or betray.
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
     '''
-    if len(my_history)==0: # It's the first round; collude.
-        return 'c'
-    elif my_history[-1]=='c' and their_history[-1]=='b':
-        return 'b' # Betray if they were severely punished last time,
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
     else:
-        return 'c' # otherwise collude.--------------------------------------------------------------------------------
-example4--------------------------------------------------------------------------------
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team4--------------------------------------------------------------------------------
+import random
+
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -180,12 +308,8 @@ example4------------------------------------------------------------------------
 ####
 
 team_name = 'E4'
-strategy_name = 'Use early history'
-strategy_description = '''\
-Collude first round. Compare all rounds to the previous round and 
-assume opponent will behave the same as the first time the previous 
-round's result occurred. If the previous round's result never has 
-happened, collude except after being severly punished.'''
+strategy_name = 'Probably Bad'
+strategy_description = 'Choose randomly in the first 3 rounds then betray 90% of the time'
     
 def move(my_history, their_history, my_score, their_score):
     '''Make my move based on the history with this player.
@@ -197,94 +321,268 @@ def move(my_history, their_history, my_score, their_score):
     
     Returns 'c' or 'b' for collude or betray.
     '''
-    if len(my_history)==0: # It's the first round: collude
+    if len(my_history) < 4:
+        #randomly return a c or b
+        num = random.randint(1,2)
+        if num == 1:
+            return 'c'
+        else:
+            return 'b'
+    else:
+        #betray 90% of the time
+        return 'b'
+        num = random.randint(1,10)
+        if num != 10:
+            return 'b'
+        else:
+            return 'c'
+    
+  
+    --------------------------------------------------------------------------------
+team5--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'T5' # Only 10 chars displayed.
+strategy_name = 'Grudge'
+strategy_description = 'Holds a grudge'
+    
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    if len(my_history)<2: # It's the first two rounds; be nice.
+        return 'c'
+    if 'b' in their_history[-5:]: # If the other player has betrayed within last 5 rounds, 
+        return 'b'                # Betray.   
+        
+    # Collude if not first couple rounds and haven't been betrayed stay nice
+    return 'c'
+
+    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team6--------------------------------------------------------------------------------
+import random
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'Eastridge' # Only 10 chars displayed.
+strategy_name = 'The name the team gives to this strategy'
+strategy_description = 'How does this strategy decide?'
+    
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    if len(my_history)<10:
+        return random.choice(['b','c']) #for the first 10 rounds select random b or c
+        
+             
+    else:
+        return 'b'     #after round 10 return b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team7--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+
+team_name = 'Team7_SK' # Only 10 chars displayed.
+strategy_name = 'Hedge My Bets'
+strategy_description = 'Decide what to return based on a determined average'
+    
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Hedge My Bets
+    Returns 'c' or 'b'. 
+    '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    total = 0.
+    t_leng = len(their_history)
+    t_list = range(t_leng)
+    if t_leng == 0:
+        return 'b'
+    for item in t_list:
+        if their_history[item] == 'c':
+            total = total + 1.
+    t_avg = total / t_leng
+    if t_avg == 0.5:
         return 'c'
     else:
-        # If there was a previous round just like the last one,
-        # do whatever they did in the round that followed it
-        
-        # Reference last round
-        recent_round_them = their_history[-1]
-        recent_round_me = my_history[-1]
-                    
-        # Look at rounds before that one
-        for round in range(len(my_history)-1):
-            prior_round_them = their_history[round]
-            prior_round_me = my_history[round]
-            # If one matches
-            if (prior_round_me == recent_round_me) and \
-                    (prior_round_them == recent_round_them):
-                return their_history[round]
-        # No match found
-        if my_history[-1]=='c' and their_history[-1]=='b':
-            return 'b' # Betray if they were severely punished last time
-        else:
-            return 'c' # Otherwise collude.--------------------------------------------------------------------------------
-example5--------------------------------------------------------------------------------
-####
-# Each team's file must define four tokens:
-#     team_name: a string
-#     strategy_name: a string
-#     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-####
-
-team_name = 'E5'
-strategy_name = 'Collude first 100 rounds unless betrayed. Betray 101st round forward.'
-strategy_description = '''\
-Betray if ever betrayed.
-If I haven't been betrayed yet, I'll betray starting with the 100th round.
-'''
-
-import random
-    
-def move(my_history, their_history, my_score, their_score):
-    '''Make my move based on the history with this player.
-    
-    history: a string with one letter (c or b) per round that has been played with this opponent.
-    their_history: a string of the same length as history, possibly empty. 
-    The first round between these two players is my_history[0] and their_history[0]
-    The most recent round is my_history[-1] and their_history[-1]
-    
-    Returns 'c' or 'b' for collude or betray.
-    '''
-    # If the other player has betrayed or this is the last half of the game, 
-    if 'b' in their_history or len(their_history)>100: 
-        return 'b'               # Betray.
-    else:
-        return 'c'         # but 90% of the time collude
-    
-    
-    --------------------------------------------------------------------------------
-example6--------------------------------------------------------------------------------
-####
-# Each team's file must define four tokens:
-#     team_name: a string
-#     strategy_name: a string
-#     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-####
-
-team_name = 'E6'
-strategy_name = 'Collude until betrayed'
-strategy_description = '''\
-Collude first round. Collude, unless betrayed; then always betray.'''
-    
-def move(my_history, their_history, my_score, their_score):
-    '''Make my move based on the history with this player.
-    
-    history: a string with one letter (c or b) per round that has been played with this opponent.
-    their_history: a string of the same length as history, possibly empty. 
-    The first round between these two players is my_history[0] and their_history[0]
-    The most recent round is my_history[-1] and their_history[-1]
-    
-    Returns 'c' or 'b' for collude or betray.
-    '''
-    if 'b' in their_history:
         return 'b'
+    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
     else:
-        return 'c'--------------------------------------------------------------------------------
-example7--------------------------------------------------------------------------------
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team8--------------------------------------------------------------------------------
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -293,26 +591,490 @@ example7------------------------------------------------------------------------
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'E7'
-strategy_name = 'Error'
-strategy_description = 'return \'\', \' \', or int 4'
-import random
+team_name = 'WendyD' # Only 10 chars displayed.
+strategy_name = 'Holds a grudge, but can be forgiving'
+strategy_description = 'I start with collude. If I see a betray once in the past two moves or three moves, I will betray. Three colludes are needed for me to collude again. If we a traveling this course neck to neck I will collude.'
     
 def move(my_history, their_history, my_score, their_score):
-    '''Make my move based on the history with this player.
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
     
-    history: a string with one letter (c or b) per round that has been played with this opponent.
-    their_history: a string of the same length as history, possibly empty. 
-    The first round between these two players is my_history[0] and their_history[0]
-    The most recent round is my_history[-1] and their_history[-1]
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
     
-    Returns 'c' or 'b' for collude or betray.
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    
+    if len(my_history)==0:
+        return 'c'
+    if their_history[-1:-2] == 'bb' or their_history[-1:-2] == 'cb' or their_history[-1:-2] == 'bc':
+        return 'b'
+    if their_history[-1:-3] == 'bcc':
+        return 'b'
+    if abs(their_score - my_score) < 20:
+        return 'c'
+    else:
+        return 'c'
+    
+    
+      
+        
+            
+
+
+    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team9--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'G4mbit' # Only 10 chars displayed.
+strategy_name = 'Stay True to the Doctor!, No B Twice!'
+strategy_description = 'Do not betray twice in a row. If BBC, then B because we want to see more Doctor Who!'
+    
+def move(my_history, their_history, my_score, their_score):
+    
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
     '''
     
-    #This example player always betrays.      
-    return random.choice(['', ' ', 4])
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    if len(my_history) < 2:
+        return 'c'
+    if len(my_history) > 50 and their_history[-1] == 'c' and their_history[-2] == 'b' and their_history[-3] == 'b':
+        return 'b'
+    if len(my_history) > 50 and my_history[-1] == 'b':
+        return 'b'
+    if my_history[-1] == 'b':
+        return 'c'
+    if their_history[-2] == 'b' and their_history[-1] == 'c':
+        return 'c'
+    if their_history[-2] == 'c' and their_history[-1] == 'b':
+        return 'b'  
+    if their_history[-2] == 'b' and their_history[-1] == 'b':
+        return 'b'    
+    return 'c'
+
+    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team10--------------------------------------------------------------------------------
+import random
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'The name the team gives to itself' # Only 10 chars displayed.
+strategy_name = 'The name the team gives to this strategy'
+strategy_description = 'How does this strategy decide?'
+    
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    if 'b' in their_history[-1:]: # If the other player has betrayed the last round, 
+        return 'b'                # Betray.
+    else:
+        if random.random()<0.5:   # Half of the other rounds
+            return 'b'           # Betray
+        else:
+            return 'c'           # Collude other half of the time
+
+    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team11--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'Tanner... This is my team' # Only 10 chars displayed.
+strategy_name = 'The name the team gives to this strategy'
+strategy_description = 'How does this strategy decide?'
+    
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''
+    if len(my_history)==0:
+        return'c'
+        # betray if history was betray 1 time ago
+    elif my_history[-1]=='c' and their_history[-1]=='b':
+        return'b'
+        # betray if after 100 tries and their history shows betray on their 6th previous try
+    if len(my_history) > 100 and their_history[-6]=='b':
+        return'b'
+        
+    else:
+        return'c'
+        # otherwise colllude
+    # betray if history was betray 2 times ago
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    return 'c'
+   
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             
 --------------------------------------------------------------------------------
+team12--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'King Kong' # Only 10 chars displayed.
+strategy_name = 'Every other round the strategy switchs, KK colludes often'
+strategy_description = 'It uses a modulus to decide if its and even or odd round'
+    
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''    
+
+    if (len(my_history)) == 0:
+            return "c"
+            
+    elif (len(my_history))%2 == 0:
+    
+        if their_history[-1] == "b":
+            return "b"
+        else:
+            return "c"
+
+    else:
+        if their_history[-1] == "b":
+            return "c"
+        else:
+            return "c"
+    
+    
+   
+   
+   
+
+
+    
+        
+            
+                    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
+team13--------------------------------------------------------------------------------
+####
+# Each team's file must define four tokens:
+#     team_name: a string
+#     strategy_name: a string
+#     strategy_description: a string
+#     move: A function that returns 'c' or 'b'
+####
+
+team_name = 'JJ JellyJar' # Only 10 chars displayed.
+strategy_name = 'Betray first, strategize later, hope for luck'
+strategy_description = 'Starts off betraying then looks at round history to make a smart move'
+    
+def move(my_history, their_history, my_score, their_score):
+    ''' Arguments accepted: my_history, their_history are strings.
+    my_score, their_score are ints.
+    
+    Make my move.
+    Returns 'c' or 'b'. 
+    '''
+
+    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
+    # their_history: a string of the same length as history, possibly empty. 
+    # The first round between these two players is my_history[0] and their_history[0].
+    # The most recent round is my_history[-1] and their_history[-1].
+    
+    # Analyze my_history and their_history and/or my_score and their_score.
+    # Decide whether to return 'c' or 'b'.
+    
+    if len(my_history)==0: # On The first round we will betray 
+        return 'b' 
+    elif len(my_history) > 10  or len(their_history) > 10:  
+        #When the length of my history and their history is greater than 10  
+        if (my_history) == 'b' or their_history == 'c': 
+        #And I betrayed OR they collude then we will collude 
+            return 'c'    
+    elif len(my_history) !=0: 
+        return 'c'  
+    else:    
+        for round in range(len(their_history)-5):  #Five rounds prior to their history  
+            if(their_history[round] == 'c') or (their_history[round] == 'b'):  
+                return 'b' 
+
+    
+def test_move(my_history, their_history, my_score, their_score, result):
+    '''calls move(my_history, their_history, my_score, their_score)
+    from this module. Prints error if return value != result.
+    Returns True or False, dpending on whether result was as expected.
+    '''
+    real_result = move(my_history, their_history, my_score, their_score)
+    if real_result == result:
+        return True
+    else:
+        print("move(" +
+            ", ".join(["'"+my_history+"'", "'"+their_history+"'",
+                       str(my_score), str(their_score)])+
+            ") returned " + "'" + real_result + "'" +
+            " and should have returned '" + result + "'")
+        return False
+
+if __name__ == '__main__':
+     
+    # Test 1: Betray on first move.
+    if test_move(my_history='',
+              their_history='', 
+              my_score=0,
+              their_score=0,
+              result='b'):
+         print 'Test passed'
+     # Test 2: Continue betraying if they collude despite being betrayed.
+    test_move(my_history='bbb',
+              their_history='ccc', 
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0, 
+              their_score=0,
+              result='b')             --------------------------------------------------------------------------------
 team14--------------------------------------------------------------------------------
+import random
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -395,773 +1157,1880 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             --------------------------------------------------------------------------------
-Section 3 - Game Data for Team E0
+Section 3 - Game Data for Team Positivity
 --------------------------------------------------------------------------------
--500 pt/round: E0(P0) "Collude"
-100 pt/round: E1(P1) "Betray"
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+-154 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+-154 pt/round: Team Clare(P1) "Completely Random"
+CCCCcBCCcbbbbbBCcbBCcbbbBCCcbbbbbBCcbbbbBCCcBCcBCcbbBcBCcbBcBcbbbbbbBcbbBCcbBCCC
+CCCCBcCCBbbbbbcCBbcCBbbbcCCBbbbbbcCBbbbbcCCBcCBcCBbbcBcCBbcBcBbbbbbbcBbbcCBbcCCC
 
-ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+CCcbbbbBCcbbBCCCcbBcbbBcbBCcbBcBCCCCcbBCCcbBCcBcBcBCCCcBCCcbBCcBcBcBCCcbBCcbbBcb
+CCBbbbbcCBbbcCCCBbcBbbcBbcCBbcBcCCCCBbcCCBbcCBcBcBcCCCBcCCBbcCBcBcBcCCBbcCBbbcBb
 
---------------------------------------------------------------------------------
--250 pt/round: E0(P0) "Collude"
-50 pt/round: E2(P2) "Alternate"
-CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCc
-CBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCB
-
-CcCcCcCcCcCcCcCcCcCcCcCc
-CBCBCBCBCBCBCBCBCBCBCBCB
+BCcBCCCcbbBcBCCCCCCC
+cCBcCCCBbbcBcCCCCCCC
 
 --------------------------------------------------------------------------------
-0 pt/round: E0(P0) "Collude"
-0 pt/round: E3(P3) "Collude but retaliate"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-9 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+-4 pt/round: Team 3(P2) "Colluding FTW"
+cbcCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+B  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
---------------------------------------------------------------------------------
-0 pt/round: E0(P0) "Collude"
-0 pt/round: E4(P4) "Use early history"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
--243 pt/round: E0(P0) "Collude"
-48 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-250 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+-246 pt/round: E4(P3) "Probably Bad"
+CcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-CCCCCCCCCCCCCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-CCCCCCCCCCCCCCCCCCCCCBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-cccccccccccccccccccccccccccccccccccc
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-
---------------------------------------------------------------------------------
-0 pt/round: E0(P0) "Collude"
-0 pt/round: E6(P6) "Collude until betrayed"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+bbbbbbbbbbb
+bbbbbbbbbbb
 
 --------------------------------------------------------------------------------
--250 pt/round: E0(P0) "Collude"
--250 pt/round: E7(P7) "Error"
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+0 pt/round: T5(P4) "Grudge"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-246 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+-242 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+CcbbbbBCCCcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CBbbbbcCCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-201 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+-201 pt/round: Team7_SK(P6) "Hedge My Bets"
+cbBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BbcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-252 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+-247 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+cBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-236 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+-236 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cBCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BcCCCCCCCCC                                                                     
+
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
                                                                                 
 
-cccccccccccccccccccccccccccccccccccccccc
+ccccc
+     
+
+--------------------------------------------------------------------------------
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+0 pt/round: Pikachu(P13) "Wild Guessing"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team Team Clare
+--------------------------------------------------------------------------------
+-154 pt/round: Team Clare(P1) "Completely Random"
+-154 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+CCCCBcCCBbbbbbcCBbcCBbbbcCCBbbbbbcCBbbbbcCCBcCBcCBbbcBcCBbcBcBbbbbbbcBbbcCBbcCCC
+CCCCcBCCcbbbbbBCcbBCcbbbBCCcbbbbbBCcbbbbBCCcBCcBCcbbBcBCcbBcBcbbbbbbBcbbBCcbBCCC
+
+CCBbbbbcCBbbcCCCBbcBbbcBbcCBbcBcCCCCBbcCCBbcCBcBcBcCCCBcCCBbcCBcBcBcCCBbcCBbbcBb
+CCcbbbbBCcbbBCCCcbBcbbBcbBCcbBcBCCCCcbBCCcbBCcBcBcBCCCcBCCcbBCcBcBcBCCcbBCcbbBcb
+
+cCBcCCCBbbcBcCCCCCCC
+BCcBCCCcbbBcBCCCCCCC
+
+--------------------------------------------------------------------------------
+-151 pt/round: Team Clare(P1) "Completely Random"
+-151 pt/round: Team 3(P2) "Colluding FTW"
+cbbcBcCCBbbcBcCCCBcCCBcCCBcCCBcCCBcBbbcCBcCBcCCBbbbcCBbcCBbcBbcBcBbcBcCCCBcBbcBc
+B  Bc CCcb  cBCCCcBCCcBCCcBCCcBCCcBcbbBCcBCcBCCcbbbBCcbBCcbBcbBcBcbBcBCCCcBcbBcB
+
+BbcBcCCBbbbbcCBbbcCCCBbcCBcBbbbbcCCCCCCCBbcCBcBcCCBcCBcCBbbbbcCCC
+cbBcBCCcbbbbBCcbbBCCCcbBCcBcbbbbBCCCCCCCcbBCcBcBCCcBCcBCcbbbbBCCC
+
+--------------------------------------------------------------------------------
+-379 pt/round: Team Clare(P1) "Completely Random"
+-60 pt/round: E4(P3) "Probably Bad"
+CbbCbccbbbcbccbcbbcbcccbbbcccbcbcccbcccbccccbccccbcbcbbcbbcbccbccccbcbcccbcccccb
+CbbCbBBbbbBbBBbBbbBbBBBbbbBBBbBbBBBbBBBbBBBBbBBBBbBbBbbBbbBbBBbBBBBbBbBBBbBBBBBb
+
+bccbccbbcbbbbbbccbbbbcbbbbbcccc
+bBBbBBbbBbbbbbbBBbbbbBbbbbbBBBB
+
+--------------------------------------------------------------------------------
+-356 pt/round: Team Clare(P1) "Completely Random"
+-84 pt/round: T5(P4) "Grudge"
+BBbbbbcbbbbccbbbbcbbcccbcbbbcccbbbbbbcccccBccbcbcbcbbcbcccbbbbbcbbcbcbbcbccbbccb
+ccbbbbBbbbbBBbbbbBbbBBBbBbbbBBBbbbbbbBBBBBcBBbBbBbBbbBbBBBbbbbbBbbBbBbbBbBBbbBBb
+
+bbcbbcccbccbbcbbcccbcccbccccbbccccbcbcbbcccccCCCBcbbcbbccbbbcbccbcbcccbc
+bbBbbBBBbBBbbBbbBBBbBBBbBBBBbbBBBBbBbBbbBBBBBCCCcBbbBbbBBbbbBbBBbBbBBBbB
+
+--------------------------------------------------------------------------------
+-360 pt/round: Team Clare(P1) "Completely Random"
+-88 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+cbCBbcCcbBbcbbcbcbbccbccccbbbbccbcbcccbccbcbbcbccbcbbccbbccbccccbcccbbcbccbbcbcc
+BbCcbBCBbcbBbbBbBbbBBbBBBBbbbbBBbBbBBBbBBbBbbBbBBbBbbBBbbBBbBBBBbBBBbbBbBBbbBbBB
+
+cccbbbbcccccbbbcbcccbbccbcbbbbcbcbccbccbbbbbcbbbbcbbccbbbbbcbbbbcbbcbbbccbbbbcbb
+BBBbbbbBBBBBbbbBbBBBbbBBbBbbbbBbBbBBbBBbbbbbBbbbbBbbBBbbbbbBbbbbBbbBbbbBBbbbbBbb
+
+cbcbcbcbccbbcc
+BbBbBbBbBBbbBB
+
+--------------------------------------------------------------------------------
+-358 pt/round: Team Clare(P1) "Completely Random"
+-94 pt/round: Team7_SK(P6) "Hedge My Bets"
+bbbbcbcbccbcbcbcccCbBcBbcbccBbbbcbbbcbccbcbccbcbbcccbbbcccbbccbbbcbcbcbbccbccbcb
+bbbbBbBbBBbBbBbBBBCbcBcbBbBBcbbbBbbbBbBBbBbBBbBbbBBBbbbBBBbbBBbbbBbBbBbbBBbBBbBb
+
+bbbcbbccbbbcbccbccbcccbbcccbbcbbbccbbbbcbbccbbcbbcccbcccbbbccbbbcbbcccbbbbccbcbc
+bbbBbbBBbbbBbBBbBBbBBBbbBBBbbBbbbBBbbbbBbbBBbbBbbBBBbBBBbbbBBbbbBbbBBBbbbbBBbBbB
+
+bcbcccbcbbbcbccbbccbbbbbcccbbbcbb
+bBbBBBbBbbbBbBBbbBBbbbbbBBBbbbBbb
+
+--------------------------------------------------------------------------------
+58 pt/round: Team Clare(P1) "Completely Random"
+-295 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+CBBCBCCBCBCBBCBCBCBCBCBBBCCBCBCBBBCCBCBBCBBBBBBCCBCBCBCCBBCBBCBCCBCCBBBBCBBBCBBC
+CccCcCCcCcCccCcCcCcCcCcccCCcCcCcccCCcCccCccccccCCcCcCcCCccCccCcCCcCCccccCcccCccC
+
+CCCBCCCCCBBBBBBBBCBBBBCBBCBBCBCBBCBBBBBCBBCBBCCBC
+CCCcCCCCCccccccccCccccCccCccCcCccCcccccCccCccCCcC
+
+--------------------------------------------------------------------------------
+-293 pt/round: Team Clare(P1) "Completely Random"
+-108 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+BCCBbBbBcCCCCCBbCBcCCCBbBcBbBcCBbBbBcCBbBcCCCBcCBcBcbbccbcbcccbbbcbcbcbbcccbcbbb
+cCCcbcbcBCCCCCcbCcBCCCcbcBcbcBCcbcbcBCcbcBCCCcBCcBcBbbBBbBbBBBbbbBbBbBbbBBBbBbbb
+
+bcccbccccccbbbbbcbbbcbbccbccbbbcccccccbbcbbcccbcbcbcccccccccbcbbbbcccccbcbcbbbbc
+bBBBbBBBBBBbbbbbBbbbBbbBBbBBbbbBBBBBBBbbBbbBBBbBbBbBBBBBBBBBbBbbbbBBBBBbBbBbbbbB
+
+cbbbcbcbbbcbbbb
+BbbbBbBbbbBbbbb
+
+--------------------------------------------------------------------------------
+-281 pt/round: Team Clare(P1) "Completely Random"
+-109 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+cCBcbcCbccccBcCccBbbbbccCcbcCCccBccCBcccBcBccbcccCBbccbbcbbccBbbbcbbbbcBcBcBbcCB
+BCcBbBCbBBBBcBCBBcbbbbBBCBbBCCBBcBBCcBBBcBcBBbBBBCcbBBbbBbbBBcbbbBbbbbBcBcBcbBCc
+
+bbbbbcbcbbcCbcBbbcCbc
+bbbbbBbBbbBCbBcbbBCbB
+
+--------------------------------------------------------------------------------
+-150 pt/round: Team Clare(P1) "Completely Random"
+-185 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+BcBbCBcCCBcBcBcBcCBcBbCCCBbBcBbCCCBcCBcCBbBbCBcBcBcCBcBcBbBcCCBcBbCCBcBcBbBcCCBb
+cBcbCcBCCcBcBcBcBCcBcbCCCcbcBcbCCCcBCcBCcbcbCcBcBcBCcBcBcbcBCCcBcbCCcBcBcbcBCCcb
+
+CCBbBbCCCBbBbBbBbBbCCcbcbCBbbCcCcbcCBbBbBcbbcbbBcbBbccBbbcBbbbcCbcccBbcCCCcbBcCC
+CCcbcbCCCcbcbcbcbcbCCBbBbCcbbCBCBbBCcbcbcBbbBbbcBbcbBBcbbBcbbbBCbBBBcbBCCCBbcBCC
+
+CbbBbCBcbb
+CbbcbCcBbb
+
+--------------------------------------------------------------------------------
+-49 pt/round: Team Clare(P1) "Completely Random"
+-200 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+CBbCBBbCCBbBbCCBbBcBbCCCCCCCBCBCCBcCCCBBbCCBcBbCCCCBcBbBbCBBcCCCBCBCBCBBcCCBbBcC
+CcbCccbCCcbcbCCcbcBcbCCCCCCCcCcCCcBCCCccbCCcBcbCCCCcBcbcbCccBCCCcCcCcCccBCCcbcBC
+
+BCBCCCCBbCBCCBbCBBcBbCBBcBbBbBcBcCCCCBbCCBbCCCCCBBbCBBcBcBbBbCCCBBcCBBcCCCBCCBc
+cCcCCCCcbCcCCcbCccBcbCccBcbcbcBcBCCCCcbCCcbCCCCCccbCccBcBcbcbCCCccBCccBCCCcCCcB
+
+--------------------------------------------------------------------------------
+-230 pt/round: Team Clare(P1) "Completely Random"
+-239 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cBBCCCCCBCCbbbbcbbccbbcccbcbccbcbcbbccbcbcbbbcbcbbbcbbcbbbbbcbbbccbbbcccccbbccbb
+BccCCCCCcCC                                                                     
+
+bcbbbbcbbcbcccbbccbbbccbccccbccbbbbbccbccc
+                                          
+
+--------------------------------------------------------------------------------
+-266 pt/round: Team Clare(P1) "Completely Random"
+-122 pt/round: Pikachu(P13) "Wild Guessing"
+CCBbbbcCCBcBbcCBcBcBcBcCCBcBcCCBbcBcBbcBbcBbcCCBbcCBbcBbbcBbbcCBbcBcBcCBcBcCBcBb
+CCcbbbBCCcBcbBCcBcBcBcBCCcBcBCCcbBcBcbBcbBcbBCCcbBCcbBcbbBcbbBCcbBcBcBCcBcBCcBcb
+
+cCBbcBcCBcCCCBcCBcBbcbbcbccbbcbbccccccbbbbbccbbcbbbbcbbcbcbcbbbcbcbbcbbcbccccbcb
+BCcbBcBCcBCCCcBCcBcbBbbBbBBbbBbbBBBBBBbbbbbBBbbBbbbbBbbBbBbBbbbBbBbbBbbBbBBBBbBb
+
+ccbccccccbbbcccccbcbbcccbcc
+BBbBBBBBBbbbBBBBBbBbbBBBbBB
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team Team 3
+--------------------------------------------------------------------------------
+-4 pt/round: Team 3(P2) "Colluding FTW"
+-9 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+B  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+cbcCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-151 pt/round: Team 3(P2) "Colluding FTW"
+-151 pt/round: Team Clare(P1) "Completely Random"
+B  Bc CCcb  cBCCCcBCCcBCCcBCCcBCCcBcbbBCcBCcBCCcbbbBCcbBCcbBcbBcBcbBcBCCCcBcbBcB
+cbbcBcCCBbbcBcCCCBcCCBcCCBcCCBcCCBcBbbcCBcCBcCCBbbbcCBbcCBbcBbcBcBbcBcCCCBcBbcBc
+
+cbBcBCCcbbbbBCcbbBCCCcbBCcBcbbbbBCCCCCCCcbBCcBcBCCcBCcBCcbbbbBCCC
+BbcBcCCBbbbbcCBbbcCCCBbcCBcBbbbbcCCCCCCCBbcCBcBcCCBcCBcCBbbbbcCCC
+
+--------------------------------------------------------------------------------
+-249 pt/round: Team 3(P2) "Colluding FTW"
+-249 pt/round: E4(P3) "Probably Bad"
+B cBc b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+ccBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+ b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-250 pt/round: Team 3(P2) "Colluding FTW"
+-250 pt/round: T5(P4) "Grudge"
+B cb  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+ccBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+ b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+  b  b  b  b  b  b
+bbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-241 pt/round: Team 3(P2) "Colluding FTW"
+-245 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+B  BCCCCcBc b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+cbbcCCCCBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+ b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+  b  b  
+bbbbbbbb
+
+--------------------------------------------------------------------------------
+-250 pt/round: Team 3(P2) "Colluding FTW"
+-250 pt/round: Team7_SK(P6) "Hedge My Bets"
+b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+ b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-1 pt/round: Team 3(P2) "Colluding FTW"
+-5 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+B CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ccCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-1 pt/round: Team 3(P2) "Colluding FTW"
+-4 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+B CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ccCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-245 pt/round: Team 3(P2) "Colluding FTW"
+-240 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+b  b  b  CCCcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbcCCCBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-3 pt/round: Team 3(P2) "Colluding FTW"
+-8 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+B  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+cbcCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-1 pt/round: Team 3(P2) "Colluding FTW"
+-5 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+B CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ccCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-232 pt/round: Team 3(P2) "Colluding FTW"
+-232 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+b CCCCCCCCCcb  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+bcCCCCCCCCC                                                                     
+
+ b  b  b  b  b  b  b  b  b  b  b  b  b  
                                         
 
 --------------------------------------------------------------------------------
-0 pt/round: E0(P0) "Collude"
-0 pt/round: Pikachu(P8) "Wild Guessing"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-92 pt/round: Team 3(P2) "Colluding FTW"
+-92 pt/round: Pikachu(P13) "Wild Guessing"
+B  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+cbcCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-Section 3 - Game Data for Team E1
---------------------------------------------------------------------------------
-100 pt/round: E1(P1) "Betray"
--500 pt/round: E0(P0) "Collude"
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-
---------------------------------------------------------------------------------
--74 pt/round: E1(P1) "Betray"
--376 pt/round: E2(P2) "Alternate"
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
-
---------------------------------------------------------------------------------
--74 pt/round: E1(P1) "Betray"
--377 pt/round: E3(P3) "Collude but retaliate"
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-
-BbBbBbBbBbBbBbBbBbBbBbB
-cbcbcbcbcbcbcbcbcbcbcbc
-
---------------------------------------------------------------------------------
--247 pt/round: E1(P1) "Betray"
--253 pt/round: E4(P4) "Use early history"
-BbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-cbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbb
-
---------------------------------------------------------------------------------
--248 pt/round: E1(P1) "Betray"
--252 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
-Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
---------------------------------------------------------------------------------
--249 pt/round: E1(P1) "Betray"
--252 pt/round: E6(P6) "Collude until betrayed"
-Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
---------------------------------------------------------------------------------
--250 pt/round: E1(P1) "Betray"
--250 pt/round: E7(P7) "Error"
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-                                                                                
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-                                                        
-
---------------------------------------------------------------------------------
--249 pt/round: E1(P1) "Betray"
--252 pt/round: Pikachu(P8) "Wild Guessing"
-Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-Section 3 - Game Data for Team E2
---------------------------------------------------------------------------------
-50 pt/round: E2(P2) "Alternate"
--250 pt/round: E0(P0) "Collude"
-CBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCB
-CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCc
-
-CBCBCBCBCBCBCBCBCBCBCBCB
-CcCcCcCcCcCcCcCcCcCcCcCc
-
---------------------------------------------------------------------------------
--376 pt/round: E2(P2) "Alternate"
--74 pt/round: E1(P1) "Betray"
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
-
---------------------------------------------------------------------------------
--199 pt/round: E2(P2) "Alternate"
--199 pt/round: E3(P3) "Collude but retaliate"
-CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-
-cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-
---------------------------------------------------------------------------------
--199 pt/round: E2(P2) "Alternate"
--199 pt/round: E4(P4) "Use early history"
-CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-
-cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-
---------------------------------------------------------------------------------
--368 pt/round: E2(P2) "Alternate"
--77 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
-CBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-CcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-
-cbcbcbcbcbcbcbcbcbcbcbc
-BbBbBbBbBbBbBbBbBbBbBbB
-
---------------------------------------------------------------------------------
--371 pt/round: E2(P2) "Alternate"
--77 pt/round: E6(P6) "Collude until betrayed"
-CBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-CcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-
-cbcbcbcbc
-BbBbBbBbB
-
---------------------------------------------------------------------------------
--250 pt/round: E2(P2) "Alternate"
--250 pt/round: E7(P7) "Error"
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-                                                                                
-
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-                                                                                
-
-cbcbcb
-      
-
---------------------------------------------------------------------------------
--260 pt/round: E2(P2) "Alternate"
--156 pt/round: Pikachu(P8) "Wild Guessing"
-CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-
-cBcBcBcBcBcBcBcBcBcBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-BcBcBcBcBcBcBcBcBcBcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-Section 3 - Game Data for Team E3
---------------------------------------------------------------------------------
-0 pt/round: E3(P3) "Collude but retaliate"
-0 pt/round: E0(P0) "Collude"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
---------------------------------------------------------------------------------
--377 pt/round: E3(P3) "Collude but retaliate"
--74 pt/round: E1(P1) "Betray"
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-
-cbcbcbcbcbcbcbcbcbcbcbc
-BbBbBbBbBbBbBbBbBbBbBbB
-
---------------------------------------------------------------------------------
--199 pt/round: E3(P3) "Collude but retaliate"
--199 pt/round: E2(P2) "Alternate"
-CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-
-BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-
---------------------------------------------------------------------------------
-0 pt/round: E3(P3) "Collude but retaliate"
-0 pt/round: E4(P4) "Use early history"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCC
-
---------------------------------------------------------------------------------
--125 pt/round: E3(P3) "Collude but retaliate"
--25 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-CCCCCCCCCCCCCCCCCCCCCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-
---------------------------------------------------------------------------------
-0 pt/round: E3(P3) "Collude but retaliate"
-0 pt/round: E6(P6) "Collude until betrayed"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCC
-CCCCCCCC
-
---------------------------------------------------------------------------------
--250 pt/round: E3(P3) "Collude but retaliate"
--250 pt/round: E7(P7) "Error"
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-                                                                                
-
-cccccccccccccccccccccc
-                      
-
---------------------------------------------------------------------------------
-0 pt/round: E3(P3) "Collude but retaliate"
-0 pt/round: Pikachu(P8) "Wild Guessing"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCC
-CCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCcb  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+CCCCCCCCCCCCCCCCCCCCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 Section 3 - Game Data for Team E4
 --------------------------------------------------------------------------------
-0 pt/round: E4(P4) "Use early history"
-0 pt/round: E0(P0) "Collude"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
---------------------------------------------------------------------------------
--253 pt/round: E4(P4) "Use early history"
--247 pt/round: E1(P1) "Betray"
-cbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-BbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+-246 pt/round: E4(P3) "Probably Bad"
+-250 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+CBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-bbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbb
+bbbbbbbbbbb
+bbbbbbbbbbb
 
 --------------------------------------------------------------------------------
--199 pt/round: E4(P4) "Use early history"
--199 pt/round: E2(P2) "Alternate"
-CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+-60 pt/round: E4(P3) "Probably Bad"
+-379 pt/round: Team Clare(P1) "Completely Random"
+CbbCbBBbbbBbBBbBbbBbBBBbbbBBBbBbBBBbBBBbBBBBbBBBBbBbBbbBbbBbBBbBBBBbBbBBBbBBBBBb
+CbbCbccbbbcbccbcbbcbcccbbbcccbcbcccbcccbccccbccccbcbcbbcbbcbccbccccbcbcccbcccccb
 
-BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
-cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-
---------------------------------------------------------------------------------
-0 pt/round: E4(P4) "Use early history"
-0 pt/round: E3(P3) "Collude but retaliate"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCC
+bBBbBBbbBbbbbbbBBbbbbBbbbbbBBBB
+bccbccbbcbbbbbbccbbbbcbbbbbcccc
 
 --------------------------------------------------------------------------------
--120 pt/round: E4(P4) "Use early history"
--113 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
+-249 pt/round: E4(P3) "Probably Bad"
+-249 pt/round: Team 3(P2) "Colluding FTW"
+ccBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+B cBc b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+
+--------------------------------------------------------------------------------
+-248 pt/round: E4(P3) "Probably Bad"
+-248 pt/round: T5(P4) "Grudge"
+CBbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CcbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-242 pt/round: E4(P3) "Probably Bad"
+-254 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+CBbbbbBBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+Ccbbbbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-252 pt/round: E4(P3) "Probably Bad"
+-248 pt/round: Team7_SK(P6) "Hedge My Bets"
+bbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+100 pt/round: E4(P3) "Probably Bad"
+-500 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+BB
+cc
+
+--------------------------------------------------------------------------------
+-200 pt/round: E4(P3) "Probably Bad"
+-282 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+CBbCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CcbCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-252 pt/round: E4(P3) "Probably Bad"
+-246 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+Bccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cBBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-146 pt/round: E4(P3) "Probably Bad"
+-319 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+CBcCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+CcBCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+
+BbBbBbBbBbBbBbBbBbBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cbcbcbcbcbcbcbcbcbcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbb
+bbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-73 pt/round: E4(P3) "Probably Bad"
+-375 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+BCBBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+cCccbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+
+bBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+bcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+
+bBbBbBbBbBb
+bcbcbcbcbcb
+
+--------------------------------------------------------------------------------
+-229 pt/round: E4(P3) "Probably Bad"
+-262 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cCBBBBBBBBBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BCccccccccc                                                                     
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                                                                
+
+--------------------------------------------------------------------------------
+-247 pt/round: E4(P3) "Probably Bad"
+-250 pt/round: Pikachu(P13) "Wild Guessing"
+BcCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cBCcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team T5
+--------------------------------------------------------------------------------
+0 pt/round: T5(P4) "Grudge"
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-CCCCCCCCCCCCCCCCCCCCCBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-84 pt/round: T5(P4) "Grudge"
+-356 pt/round: Team Clare(P1) "Completely Random"
+ccbbbbBbbbbBBbbbbBbbBBBbBbbbBBBbbbbbbBBBBBcBBbBbBbBbbBbBBBbbbbbBbbBbBbbBbBBbbBBb
+BBbbbbcbbbbccbbbbcbbcccbcbbbcccbbbbbbcccccBccbcbcbcbbcbcccbbbbbcbbcbcbbcbccbbccb
+
+bbBbbBBBbBBbbBbbBBBbBBBbBBBBbbBBBBbBbBbbBBBBBCCCcBbbBbbBBbbbBbBBbBbBBBbB
+bbcbbcccbccbbcbbcccbcccbccccbbccccbcbcbbcccccCCCBcbbcbbccbbbcbccbcbcccbc
+
+--------------------------------------------------------------------------------
+-250 pt/round: T5(P4) "Grudge"
+-250 pt/round: Team 3(P2) "Colluding FTW"
+ccBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+B cb  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b
+
+bbbbbbbbbbbbbbbbbb
+  b  b  b  b  b  b
+
+--------------------------------------------------------------------------------
+-248 pt/round: T5(P4) "Grudge"
+-248 pt/round: E4(P3) "Probably Bad"
+CcbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CBbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-243 pt/round: T5(P4) "Grudge"
+-252 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+ccbbBBBBBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BBbbcccccBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-252 pt/round: T5(P4) "Grudge"
+-246 pt/round: Team7_SK(P6) "Hedge My Bets"
+ccbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BBbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: T5(P4) "Grudge"
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: T5(P4) "Grudge"
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-255 pt/round: T5(P4) "Grudge"
+-244 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+ccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
-0 pt/round: E4(P4) "Use early history"
-0 pt/round: E6(P6) "Collude until betrayed"
+0 pt/round: T5(P4) "Grudge"
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCC
-CCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
--250 pt/round: E4(P4) "Use early history"
--250 pt/round: E7(P7) "Error"
-cc c                                                                            
-                                                                                
+0 pt/round: T5(P4) "Grudge"
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-                                                                                
-                                                                                
-
-                                        
-                                        
+CCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
-0 pt/round: E4(P4) "Use early history"
-0 pt/round: Pikachu(P8) "Wild Guessing"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-230 pt/round: T5(P4) "Grudge"
+-244 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cCBBBBCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BCccccCCCCC                                                                     
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+cccccccccccccccccccccccccccccccccccccccccccccccccc
+                                                  
 
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-Section 3 - Game Data for Team E5
---------------------------------------------------------------------------------
-48 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
--243 pt/round: E0(P0) "Collude"
+0 pt/round: T5(P4) "Grudge"
+0 pt/round: Pikachu(P13) "Wild Guessing"
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-CCCCCCCCCCCCCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-cccccccccccccccccccccccccccccccccccc
-
---------------------------------------------------------------------------------
--252 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
--248 pt/round: E1(P1) "Betray"
-cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
---------------------------------------------------------------------------------
--77 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
--368 pt/round: E2(P2) "Alternate"
-CcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-CBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-
-BbBbBbBbBbBbBbBbBbBbBbB
-cbcbcbcbcbcbcbcbcbcbcbc
-
---------------------------------------------------------------------------------
--25 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
--125 pt/round: E3(P3) "Collude but retaliate"
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-CCCCCCCCCCCCCCCCCCCCCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-
---------------------------------------------------------------------------------
--113 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
--120 pt/round: E4(P4) "Use early history"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-CCCCCCCCCCCCCCCCCCCCCcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
---------------------------------------------------------------------------------
--99 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
--103 pt/round: E6(P6) "Collude until betrayed"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-CCCCCCCCCCCCCCCCCCCCCcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbb
-bbbbbbbbb
-
---------------------------------------------------------------------------------
--250 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
--250 pt/round: E7(P7) "Error"
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-                                                                                
-
-cccccccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-                                                                      
-
---------------------------------------------------------------------------------
--102 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
--105 pt/round: Pikachu(P8) "Wild Guessing"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-CCCCCCCCCCCCCCCCCCCCCcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbbbbb
-bbbbbbbbbbbb
+CCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-Section 3 - Game Data for Team E6
+Section 3 - Game Data for Team Eastridge
 --------------------------------------------------------------------------------
-0 pt/round: E6(P6) "Collude until betrayed"
-0 pt/round: E0(P0) "Collude"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
---------------------------------------------------------------------------------
--252 pt/round: E6(P6) "Collude until betrayed"
--249 pt/round: E1(P1) "Betray"
-cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+-242 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-246 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+CBbbbbcCCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CcbbbbBCCCcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
--77 pt/round: E6(P6) "Collude until betrayed"
--371 pt/round: E2(P2) "Alternate"
-CcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-CBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+-88 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-360 pt/round: Team Clare(P1) "Completely Random"
+BbCcbBCBbcbBbbBbBbbBBbBBBBbbbbBBbBbBBBbBBbBbbBbBBbBbbBBbbBBbBBBBbBBBbbBbBBbbBbBB
+cbCBbcCcbBbcbbcbcbbccbccccbbbbccbcbcccbccbcbbcbccbcbbccbbccbccccbcccbbcbccbbcbcc
 
-BbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+BBBbbbbBBBBBbbbBbBBBbbBBbBbbbbBbBbBBbBBbbbbbBbbbbBbbBBbbbbbBbbbbBbbBbbbBBbbbbBbb
+cccbbbbcccccbbbcbcccbbccbcbbbbcbcbccbccbbbbbcbbbbcbbccbbbbbcbbbbcbbcbbbccbbbbcbb
 
-BbBbBbBbB
-cbcbcbcbc
-
---------------------------------------------------------------------------------
-0 pt/round: E6(P6) "Collude until betrayed"
-0 pt/round: E3(P3) "Collude but retaliate"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCC
-CCCCCCCC
+BbBbBbBbBBbbBB
+cbcbcbcbccbbcc
 
 --------------------------------------------------------------------------------
-0 pt/round: E6(P6) "Collude until betrayed"
-0 pt/round: E4(P4) "Use early history"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-245 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-241 pt/round: Team 3(P2) "Colluding FTW"
+cbbcCCCCBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+B  BCCCCcBc b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCC
-CCCCCCCCCC
-
---------------------------------------------------------------------------------
--103 pt/round: E6(P6) "Collude until betrayed"
--99 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-CCCCCCCCCCCCCCCCCCCCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
-bbbbbbbbb
-bbbbbbbbb
-
---------------------------------------------------------------------------------
--250 pt/round: E6(P6) "Collude until betrayed"
--250 pt/round: E7(P7) "Error"
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-                                                                                
-
-ccccccccccccccccccccccccccccccc
-                               
-
---------------------------------------------------------------------------------
-0 pt/round: E6(P6) "Collude until betrayed"
-0 pt/round: Pikachu(P8) "Wild Guessing"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-Section 3 - Game Data for Team E7
---------------------------------------------------------------------------------
--250 pt/round: E7(P7) "Error"
--250 pt/round: E0(P0) "Collude"
-                                                                                
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-
-                                        
-cccccccccccccccccccccccccccccccccccccccc
-
---------------------------------------------------------------------------------
--250 pt/round: E7(P7) "Error"
--250 pt/round: E1(P1) "Betray"
-                                                                                
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b
 
-                                                        
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-
---------------------------------------------------------------------------------
--250 pt/round: E7(P7) "Error"
--250 pt/round: E2(P2) "Alternate"
-                                                                                
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-
-                                                                                
-cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
-
-      
-cbcbcb
+bbbbbbbb
+  b  b  
 
 --------------------------------------------------------------------------------
--250 pt/round: E7(P7) "Error"
--250 pt/round: E3(P3) "Collude but retaliate"
-                                                                                
+-254 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-242 pt/round: E4(P3) "Probably Bad"
+Ccbbbbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CBbbbbBBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-252 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-243 pt/round: T5(P4) "Grudge"
+BBbbcccccBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ccbbBBBBBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-255 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-239 pt/round: Team7_SK(P6) "Hedge My Bets"
+ccbbCcbcbcbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BBbbCBbBbBbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+96 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-484 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+BCBBCCBCCCBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+cCccCCcCCCcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-                      
+BBBBBBBBBBBBBBBBBBBBBB
 cccccccccccccccccccccc
 
 --------------------------------------------------------------------------------
--250 pt/round: E7(P7) "Error"
--250 pt/round: E4(P4) "Use early history"
+-203 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-281 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+BBbCBbBbBcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ccbCcbcbcBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-247 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-242 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+BbbcCccCBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cbbBCBBCcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-80 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-359 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+BcBcBcCBbCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+cBcBcBCcbCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+
+BbBbBbBbBbBbBbBbBbBbB
+cbcbcbcbcbcbcbcbcbcbc
+
+--------------------------------------------------------------------------------
+-68 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-360 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+BCBCCBbCCCBBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+cCcCCcbCCCccbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+
+bBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+bcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+
+--------------------------------------------------------------------------------
+-234 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-245 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cCCCBBCBCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BCCCccCcCCc                                                                     
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                                                                               
+
+--------------------------------------------------------------------------------
+-239 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+-243 pt/round: Pikachu(P13) "Wild Guessing"
+BcCCCCBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cBCCCCcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team Team7_SK
+--------------------------------------------------------------------------------
+-201 pt/round: Team7_SK(P6) "Hedge My Bets"
+-201 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+BbcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cbBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-94 pt/round: Team7_SK(P6) "Hedge My Bets"
+-358 pt/round: Team Clare(P1) "Completely Random"
+bbbbBbBbBBbBbBbBBBCbcBcbBbBBcbbbBbbbBbBBbBbBBbBbbBBBbbbBBBbbBBbbbBbBbBbbBBbBBbBb
+bbbbcbcbccbcbcbcccCbBcBbcbccBbbbcbbbcbccbcbccbcbbcccbbbcccbbccbbbcbcbcbbccbccbcb
+
+bbbBbbBBbbbBbBBbBBbBBBbbBBBbbBbbbBBbbbbBbbBBbbBbbBBBbBBBbbbBBbbbBbbBBBbbbbBBbBbB
+bbbcbbccbbbcbccbccbcccbbcccbbcbbbccbbbbcbbccbbcbbcccbcccbbbccbbbcbbcccbbbbccbcbc
+
+bBbBBBbBbbbBbBBbbBBbbbbbBBBbbbBbb
+bcbcccbcbbbcbccbbccbbbbbcccbbbcbb
+
+--------------------------------------------------------------------------------
+-250 pt/round: Team7_SK(P6) "Hedge My Bets"
+-250 pt/round: Team 3(P2) "Colluding FTW"
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+
+--------------------------------------------------------------------------------
+-248 pt/round: Team7_SK(P6) "Hedge My Bets"
+-252 pt/round: E4(P3) "Probably Bad"
+bbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-246 pt/round: Team7_SK(P6) "Hedge My Bets"
+-252 pt/round: T5(P4) "Grudge"
+BBbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ccbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-239 pt/round: Team7_SK(P6) "Hedge My Bets"
+-255 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+BBbbCBbBbBbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ccbbCcbcbcbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+100 pt/round: Team7_SK(P6) "Hedge My Bets"
+-500 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+BBBBBBBBBBB
+ccccccccccc
+
+--------------------------------------------------------------------------------
+-195 pt/round: Team7_SK(P6) "Hedge My Bets"
+-289 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+BBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbbcbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ccbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbbBbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-250 pt/round: Team7_SK(P6) "Hedge My Bets"
+-250 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+Bbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-150 pt/round: Team7_SK(P6) "Hedge My Bets"
+-319 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+BbCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+cbCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+
+bBbBbBbBbBbBbBbBbBbBbbcbbbbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bcbcbcbcbcbcbcbcbcbcbbBbbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-73 pt/round: Team7_SK(P6) "Hedge My Bets"
+-378 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+BBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+ccbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+
+bBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+bcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+
+--------------------------------------------------------------------------------
+-224 pt/round: Team7_SK(P6) "Hedge My Bets"
+-266 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+bBCBBBBBBBBbbbbbbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bcCcccccccc                                                                     
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                                                
+
+--------------------------------------------------------------------------------
+-219 pt/round: Team7_SK(P6) "Hedge My Bets"
+-219 pt/round: Pikachu(P13) "Wild Guessing"
+BbcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+cbBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+
+cBcBcBcBcBcBcBcBcBcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BcBcBcBcBcBcBcBcBcBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team WendyD
+--------------------------------------------------------------------------------
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-295 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+58 pt/round: Team Clare(P1) "Completely Random"
+CccCcCCcCcCccCcCcCcCcCcccCCcCcCcccCCcCccCccccccCCcCcCcCCccCccCcCCcCCccccCcccCccC
+CBBCBCCBCBCBBCBCBCBCBCBBBCCBCBCBBBCCBCBBCBBBBBBCCBCBCBCCBBCBBCBCCBCCBBBBCBBBCBBC
+
+CCCcCCCCCccccccccCccccCccCccCcCccCcccccCccCccCCcC
+CCCBCCCCCBBBBBBBBCBBBBCBBCBBCBCBBCBBBBBCBBCBBCCBC
+
+--------------------------------------------------------------------------------
+-5 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+-1 pt/round: Team 3(P2) "Colluding FTW"
+ccCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+B CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-500 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+100 pt/round: E4(P3) "Probably Bad"
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+cc
+BB
+
+--------------------------------------------------------------------------------
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+0 pt/round: T5(P4) "Grudge"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-484 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+96 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+cCccCCcCCCcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BCBBCCBCCCBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+cccccccccccccccccccccc
+BBBBBBBBBBBBBBBBBBBBBB
+
+--------------------------------------------------------------------------------
+-500 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+100 pt/round: Team7_SK(P6) "Hedge My Bets"
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+ccccccccccc
+BBBBBBBBBBB
+
+--------------------------------------------------------------------------------
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-240 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+47 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+cccCCccCCcccCCcCcCCcCCcCCcccCccCcccccCccCCcccCCCCcCcCcCccCcCCCcCCcCcccCCCCccCccC
+BBBCCBBCCBBBCCBCBCCBCCBCCBBBCBBCBBBBBCBBCCBBBCCCCBCBCBCBBCBCCCBCCBCBBBCCCCBBCBBC
+
+CcccCCCCcCCCCCcCcCCCcccCCcCCccCCccCCC
+CBBBCCCCBCCCCCBCBCCCBBBCCBCCBBCCBBCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-239 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+-235 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cCCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BCCCCCCCCCC                                                                     
+
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
                                                                                 
-cc c                                                                            
+
+cccccccccccccccccccccccccccccc
+                              
+
+--------------------------------------------------------------------------------
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+0 pt/round: Pikachu(P13) "Wild Guessing"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCC
+CCCCCCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team G4mbit
+--------------------------------------------------------------------------------
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-108 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+-293 pt/round: Team Clare(P1) "Completely Random"
+cCCcbcbcBCCCCCcbCcBCCCcbcBcbcBCcbcbcBCcbcBCCCcBCcBcBbbBBbBbBBBbbbBbBbBbbBBBbBbbb
+BCCBbBbBcCCCCCBbCBcCCCBbBcBbBcCBbBbBcCBbBcCCCBcCBcBcbbccbcbcccbbbcbcbcbbcccbcbbb
+
+bBBBbBBBBBBbbbbbBbbbBbbBBbBBbbbBBBBBBBbbBbbBBBbBbBbBBBBBBBBBbBbbbbBBBBBbBbBbbbbB
+bcccbccccccbbbbbcbbbcbbccbccbbbcccccccbbcbbcccbcbcbcccccccccbcbbbbcccccbcbcbbbbc
+
+BbbbBbBbbbBbbbb
+cbbbcbcbbbcbbbb
+
+--------------------------------------------------------------------------------
+-4 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+-1 pt/round: Team 3(P2) "Colluding FTW"
+ccCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+B CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-282 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+-200 pt/round: E4(P3) "Probably Bad"
+CcbCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CBbCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+0 pt/round: T5(P4) "Grudge"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-281 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+-203 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+ccbCcbcbcBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BBbCBbBbBcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-289 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+-195 pt/round: Team7_SK(P6) "Hedge My Bets"
+ccbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbbBbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbbcbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-282 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+-194 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+ccbcbcbcbcbcBcBcBcbcbcbcbcbcbcbcbcBcbcBcBcbcbcBcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BBbBbBbBbBbBcBcBcBbBbBbBbBbBbBbBbBcBbBcBcBbBbBcBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-236 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+-233 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cCCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BCCCCCCCCCC                                                                     
+
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+                                                                               
+
+--------------------------------------------------------------------------------
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+0 pt/round: Pikachu(P13) "Wild Guessing"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team The name the team gives to itself
+--------------------------------------------------------------------------------
+-247 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-252 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+BcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-109 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-281 pt/round: Team Clare(P1) "Completely Random"
+BCcBbBCbBBBBcBCBBcbbbbBBCBbBCCBBcBBCcBBBcBcBBbBBBCcbBBbbBbbBBcbbbBbbbbBcBcBcbBCc
+cCBcbcCbccccBcCccBbbbbccCcbcCCccBccCBcccBcBccbcccCBbccbbcbbccBbbbcbbbbcBcBcBbcCB
+
+bbbbbBbBbbBCbBcbbBCbB
+bbbbbcbcbbcCbcBbbcCbc
+
+--------------------------------------------------------------------------------
+-240 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-245 pt/round: Team 3(P2) "Colluding FTW"
+bbbbbbbbcCCCBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+b  b  b  CCCcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-246 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-252 pt/round: E4(P3) "Probably Bad"
+cBBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+Bccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-244 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-255 pt/round: T5(P4) "Grudge"
+BBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-242 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-247 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+cbbBCBBCcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BbbcCccCBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-250 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-250 pt/round: Team7_SK(P6) "Hedge My Bets"
+cbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+Bbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+47 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-240 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+BBBCCBBCCBBBCCBCBCCBCCBCCBBBCBBCBBBBBCBBCCBBBCCCCBCBCBCBBCBCCCBCCBCBBBCCCCBBCBBC
+cccCCccCCcccCCcCcCCcCCcCCcccCccCcccccCccCCcccCCCCcCcCcCccCcCCCcCCcCcccCCCCccCccC
+
+CBBBCCCCBCCCCCBCBCCCBBBCCBCCBBCCBBCCC
+CcccCCCCcCCCCCcCcCCCcccCCcCCccCCccCCC
+
+--------------------------------------------------------------------------------
+-194 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-282 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+BBbBbBbBbBbBcBcBcBbBbBbBbBbBbBbBbBcBbBcBcBbBbBcBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ccbcbcbcbcbcBcBcBcbcbcbcbcbcbcbcbcBcbcBcBcbcbcBcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-187 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-276 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+BcBbBbBcBcBbBbBbBcBcBcBcBbBcBbBbBcBbBcBbBcBcBcBbBcBbBbBcBbBcBbBcBbBbBcBbBcBbBcBc
+cBcbcbcBcBcbcbcbcBcBcBcBcbcBcbcbcBcbcBcbcBcBcBcbcBcbcbcBcbcBcbcBcbcbcBcbcBcbcBcB
+
+BbBbBbBbBbBcBbBbBbBcBbbbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cbcbcbcbcbcBcbcbcbcBcbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-144 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-276 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+CBcBbBbBbBcBbBcBcBbBbBbBcBbBbBbBbBcBbBcBcBcBbBbBcBcBcBcBcBcBbBcBcBcBbBbBbBcBbBbB
+CcBcbcbcbcBcbcBcBcbcbcbcBcbcbcbcbcBcbcBcBcBcbcbcBcBcBcBcBcBcbcBcBcBcbcbcbcBcbcbc
+
+cBcBbBcBcBbBbBcBcBcBcBbBbBcBbBcBbBcBcBcBcBc
+BcBcbcBcBcbcbcBcBcBcBcbcbcBcbcBcbcBcBcBcBcB
+
+--------------------------------------------------------------------------------
+-236 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-245 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+bBBCCBCCCCCccbbbcbcccbccccbccccbbcbbbbbcbbbbcbccbcbbcbbcccbbccbbbbcbbbbbbbbbcbcb
+bccCCcCCCCC                                                                     
+
+bcbbbcbbbcbbbbccccbbcccbbbcccccbbcbbcbcbcbccbccbccccbbcbccbbbbbccbbbbcccbbbbbbcc
+                                                                                
+
+ccccbbcbbbbbccbbbbcbbccbbcbbcccbccc
+                                   
+
+--------------------------------------------------------------------------------
+-246 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+-251 pt/round: Pikachu(P13) "Wild Guessing"
+BcBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cBcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team Tanner... This is my team
+--------------------------------------------------------------------------------
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-185 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+-150 pt/round: Team Clare(P1) "Completely Random"
+cBcbCcBCCcBcBcBcBCcBcbCCCcbcBcbCCCcBCcBCcbcbCcBcBcBCcBcBcbcBCCcBcbCCcBcBcbcBCCcb
+BcBbCBcCCBcBcBcBcCBcBbCCCBbBcBbCCCBcCBcCBbBbCBcBcBcCBcBcBbBcCCBcBbCCBcBcBbBcCCBb
+
+CCcbcbCCCcbcbcbcbcbCCBbBbCcbbCBCBbBCcbcbcBbbBbbcBbcbBBcbbBcbbbBCbBBBcbBCCCBbcBCC
+CCBbBbCCCBbBbBbBbBbCCcbcbCBbbCcCcbcCBbBbBcbbcbbBcbBbccBbbcBbbbcCbcccBbcCCCcbBcCC
+
+CbbcbCcBbb
+CbbBbCBcbb
+
+--------------------------------------------------------------------------------
+-8 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+-3 pt/round: Team 3(P2) "Colluding FTW"
+cbcCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+B  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-319 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+-146 pt/round: E4(P3) "Probably Bad"
+CcBCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+CBcCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+
+cbcbcbcbcbcbcbcbcbcbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BbBbBbBbBbBbBbBbBbBbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbb
+bbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+0 pt/round: T5(P4) "Grudge"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-359 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+-80 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+cBcBcBCcbCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+BcBcBcCBbCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+
+cbcbcbcbcbcbcbcbcbcbc
+BbBbBbBbBbBbBbBbBbBbB
+
+--------------------------------------------------------------------------------
+-319 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+-150 pt/round: Team7_SK(P6) "Hedge My Bets"
+cbCcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+BbCBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+
+bcbcbcbcbcbcbcbcbcbcbbBbbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bBbBbBbBbBbBbBbBbBbBbbcbbbbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-276 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+-187 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+cBcbcbcBcBcbcbcbcBcBcBcBcbcBcbcbcBcbcBcbcBcBcBcbcBcbcbcBcbcBcbcBcbcbcBcbcBcbcBcB
+BcBbBbBcBcBbBbBbBcBcBcBcBbBcBbBbBcBbBcBbBcBcBcBbBcBbBbBcBbBcBbBcBbBbBcBbBcBbBcBc
+
+cbcbcbcbcbcBcbcbcbcBcbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BbBbBbBbBbBcBbBbBbBcBbbbbBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCC
+CCCCCCCCC
+
+--------------------------------------------------------------------------------
+-233 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+-233 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cBCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BcCCCCCCCCC                                                                     
+
+cccccccccccccccccccccccccccccccccccccccccccccccccccc
+                                                    
+
+--------------------------------------------------------------------------------
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+0 pt/round: Pikachu(P13) "Wild Guessing"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team King Kong
+--------------------------------------------------------------------------------
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-200 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+-49 pt/round: Team Clare(P1) "Completely Random"
+CcbCccbCCcbcbCCcbcBcbCCCCCCCcCcCCcBCCCccbCCcBcbCCCCcBcbcbCccBCCCcCcCcCccBCCcbcBC
+CBbCBBbCCBbBbCCBbBcBbCCCCCCCBCBCCBcCCCBBbCCBcBbCCCCBcBbBbCBBcCCCBCBCBCBBcCCBbBcC
+
+cCcCCCCcbCcCCcbCccBcbCccBcbcbcBcBCCCCcbCCcbCCCCCccbCccBcBcbcbCCCccBCccBCCCcCCcB
+BCBCCCCBbCBCCBbCBBcBbCBBcBbBbBcBcCCCCBbCCBbCCCCCBBbCBBcBcBbBbCCCBBcCBBcCCCBCCBc
+
+--------------------------------------------------------------------------------
+-5 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+-1 pt/round: Team 3(P2) "Colluding FTW"
+ccCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+B CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-375 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+-73 pt/round: E4(P3) "Probably Bad"
+cCccbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+BCBBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+
+bcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+bBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+
+bcbcbcbcbcb
+bBbBbBbBbBb
+
+--------------------------------------------------------------------------------
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+0 pt/round: T5(P4) "Grudge"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-360 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+-68 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+cCcCCcbCCCccbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+BCBCCBbCCCBBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+
+bcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+bBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
+
+--------------------------------------------------------------------------------
+-378 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+-73 pt/round: Team7_SK(P6) "Hedge My Bets"
+ccbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+BBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+
+bcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc
+bBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB
+
+--------------------------------------------------------------------------------
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-276 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+-144 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+CcBcbcbcbcBcbcBcBcbcbcbcBcbcbcbcbcBcbcBcBcBcbcbcBcBcBcBcBcBcbcBcBcBcbcbcbcBcbcbc
+CBcBbBbBbBcBbBcBcBbBbBbBcBbBbBbBbBcBbBcBcBcBbBbBcBcBcBcBcBcBbBcBcBcBbBbBbBcBbBbB
+
+BcBcbcBcBcbcbcBcBcBcBcbcbcBcbcBcbcBcBcBcBcB
+cBcBbBcBcBbBbBcBcBcBcBbBbBcBbBcBbBcBcBcBcBc
+
+--------------------------------------------------------------------------------
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCC
+CCCCCCCCC
+
+--------------------------------------------------------------------------------
+-230 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+-225 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cCCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BCCCCCCCCCC                                                                     
+
+cccccccccccccccccccccccccccccc
+                              
+
+--------------------------------------------------------------------------------
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+0 pt/round: Pikachu(P13) "Wild Guessing"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Section 3 - Game Data for Team JJ JellyJar
+--------------------------------------------------------------------------------
+-236 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-236 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
+BcCCCCCCCCC                                                                     
+cBCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
                                                                                 
-                                                                                
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+     
+ccccc
+
+--------------------------------------------------------------------------------
+-239 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-230 pt/round: Team Clare(P1) "Completely Random"
+BccCCCCCcCC                                                                     
+cBBCCCCCBCCbbbbcbbccbbcccbcbccbcbcbbccbcbcbbbcbcbbbcbbcbbbbbcbbbccbbbcccccbbccbb
+
+                                          
+bcbbbbcbbcbcccbbccbbbccbccccbccbbbbbccbccc
+
+--------------------------------------------------------------------------------
+-232 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-232 pt/round: Team 3(P2) "Colluding FTW"
+bcCCCCCCCCC                                                                     
+b CCCCCCCCCcb  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
 
                                         
-                                        
+ b  b  b  b  b  b  b  b  b  b  b  b  b  
 
 --------------------------------------------------------------------------------
--250 pt/round: E7(P7) "Error"
--250 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
+-262 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-229 pt/round: E4(P3) "Probably Bad"
+BCccccccccc                                                                     
+cCBBBBBBBBBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+                                                                
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-244 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-230 pt/round: T5(P4) "Grudge"
+BCccccCCCCC                                                                     
+cCBBBBCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+                                                  
+cccccccccccccccccccccccccccccccccccccccccccccccccc
+
+--------------------------------------------------------------------------------
+-245 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-234 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+BCCCccCcCCc                                                                     
+cCCCBBCBCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+                                                                               
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-266 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-224 pt/round: Team7_SK(P6) "Hedge My Bets"
+bcCcccccccc                                                                     
+bBCBBBBBBBBbbbbbbbbbcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+                                                
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+-235 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-239 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
+BCCCCCCCCCC                                                                     
+cCCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
                                                                                 
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-                                                                      
-cccccccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                              
+cccccccccccccccccccccccccccccc
 
 --------------------------------------------------------------------------------
--250 pt/round: E7(P7) "Error"
--250 pt/round: E6(P6) "Collude until betrayed"
-                                                                                
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+-233 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-236 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
+BCCCCCCCCCC                                                                     
+cCCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-                               
-ccccccccccccccccccccccccccccccc
+                                                                               
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
 --------------------------------------------------------------------------------
--250 pt/round: E7(P7) "Error"
--250 pt/round: Pikachu(P8) "Wild Guessing"
-                                                                                
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+-245 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-236 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+bccCCcCCCCC                                                                     
+bBBCCBCCCCCccbbbcbcccbccccbccccbbcbbbbbcbbbbcbccbcbbcbbcccbbccbbbbcbbbbbbbbbcbcb
 
-                                                           
-ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+                                                                                
+bcbbbcbbbcbbbbccccbbcccbbbcccccbbcbbcbcbcbccbccbccccbbcbccbbbbbccbbbbcccbbbbbbcc
+
+                                   
+ccccbbcbbbbbccbbbbcbbccbbcbbcccbccc
+
+--------------------------------------------------------------------------------
+-233 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-233 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+BcCCCCCCCCC                                                                     
+cBCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+                                                    
+cccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+--------------------------------------------------------------------------------
+-225 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-230 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+BCCCCCCCCCC                                                                     
+cCCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+                              
+cccccccccccccccccccccccccccccc
+
+--------------------------------------------------------------------------------
+-232 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+-232 pt/round: Pikachu(P13) "Wild Guessing"
+BcCCCCCCCCC                                                                     
+cBCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+                                                  
+cccccccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 Section 3 - Game Data for Team Pikachu
 --------------------------------------------------------------------------------
-0 pt/round: Pikachu(P8) "Wild Guessing"
-0 pt/round: E0(P0) "Collude"
+0 pt/round: Pikachu(P13) "Wild Guessing"
+0 pt/round: Positivity(P0) "People do not like to betray others 2 times in a row"
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
--252 pt/round: Pikachu(P8) "Wild Guessing"
--249 pt/round: E1(P1) "Betray"
-cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+-122 pt/round: Pikachu(P13) "Wild Guessing"
+-266 pt/round: Team Clare(P1) "Completely Random"
+CCcbbbBCCcBcbBCcBcBcBcBCCcBcBCCcbBcBcbBcbBcbBCCcbBCcbBcbbBcbbBCcbBcBcBCcBcBCcBcb
+CCBbbbcCCBcBbcCBcBcBcBcCCBcBcCCBbcBcBbcBbcBbcCCBbcCBbcBbbcBbbcCBbcBcBcCBcBcCBcBb
+
+BCcbBcBCcBCCCcBCcBcbBbbBbBBbbBbbBBBBBBbbbbbBBbbBbbbbBbbBbBbBbbbBbBbbBbbBbBBBBbBb
+cCBbcBcCBcCCCBcCBcBbcbbcbccbbcbbccccccbbbbbccbbcbbbbcbbcbcbcbbbcbcbbcbbcbccccbcb
+
+BBbBBBBBBbbbBBBBBbBbbBBBbBB
+ccbccccccbbbcccccbcbbcccbcc
+
+--------------------------------------------------------------------------------
+-92 pt/round: Pikachu(P13) "Wild Guessing"
+-92 pt/round: Team 3(P2) "Colluding FTW"
+cbcCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+B  CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CCCCCCCCCCCCCCCCCCCCCcb  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b  b 
+
+--------------------------------------------------------------------------------
+-250 pt/round: Pikachu(P13) "Wild Guessing"
+-247 pt/round: E4(P3) "Probably Bad"
+cBCcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BcCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
--156 pt/round: Pikachu(P8) "Wild Guessing"
--260 pt/round: E2(P2) "Alternate"
-CcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
-CBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
+0 pt/round: Pikachu(P13) "Wild Guessing"
+0 pt/round: T5(P4) "Grudge"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-BcBcBcBcBcBcBcBcBcBcBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb
-cBcBcBcBcBcBcBcBcBcBcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
-0 pt/round: Pikachu(P8) "Wild Guessing"
-0 pt/round: E3(P3) "Collude but retaliate"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-243 pt/round: Pikachu(P13) "Wild Guessing"
+-239 pt/round: Eastridge(P5) "The name the team gives to this strategy"
+cBCCCCcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BcCCCCBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCC
-CCCCCCCCCC
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
-0 pt/round: Pikachu(P8) "Wild Guessing"
-0 pt/round: E4(P4) "Use early history"
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+-219 pt/round: Pikachu(P13) "Wild Guessing"
+-219 pt/round: Team7_SK(P6) "Hedge My Bets"
+cbBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBc
+BbcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcBcB
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+BcBcBcBcBcBcBcBcBcBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cBcBcBcBcBcBcBcBcBcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 --------------------------------------------------------------------------------
--105 pt/round: Pikachu(P8) "Wild Guessing"
--102 pt/round: E5(P5) "Collude first 100 rounds unless betrayed. Betray 101st round forward."
+0 pt/round: Pikachu(P13) "Wild Guessing"
+0 pt/round: WendyD(P7) "Holds a grudge, but can be forgiving"
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-CCCCCCCCCCCCCCCCCCCCCBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-bbbbbbbbbbbb
-bbbbbbbbbbbb
+CCCCCCC
+CCCCCCC
 
 --------------------------------------------------------------------------------
-0 pt/round: Pikachu(P8) "Wild Guessing"
-0 pt/round: E6(P6) "Collude until betrayed"
+0 pt/round: Pikachu(P13) "Wild Guessing"
+0 pt/round: G4mbit(P8) "Stay True to the Doctor!, No B Twice!"
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
 --------------------------------------------------------------------------------
--250 pt/round: Pikachu(P8) "Wild Guessing"
--250 pt/round: E7(P7) "Error"
-cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-                                                                                
+-251 pt/round: Pikachu(P13) "Wild Guessing"
+-246 pt/round: The name the team gives to itself(P9) "The name the team gives to this strategy"
+cBcBcbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+BcBcBbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-                                                           
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+--------------------------------------------------------------------------------
+0 pt/round: Pikachu(P13) "Wild Guessing"
+0 pt/round: Tanner... This is my team(P10) "The name the team gives to this strategy"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+0 pt/round: Pikachu(P13) "Wild Guessing"
+0 pt/round: King Kong(P11) "Every other round the strategy switchs, KK colludes often"
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+--------------------------------------------------------------------------------
+-232 pt/round: Pikachu(P13) "Wild Guessing"
+-232 pt/round: JJ JellyJar(P12) "Betray first, strategize later, hope for luck"
+cBCCCCCCCCCccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+BcCCCCCCCCC                                                                     
+
+cccccccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                                                  
 
 --------------------------------------------------------------------------------
