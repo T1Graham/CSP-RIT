@@ -6,15 +6,16 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+
+team_name = 'Team7_SK' # Only 10 chars displayed.
+strategy_name = 'Hedge My Bets'
+strategy_description = 'Decide what to return based on a determined average'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
-    Make my move.
+    Hedge My Bets
     Returns 'c' or 'b'. 
     '''
 
@@ -25,9 +26,19 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    
-    return 'c'
-
+    total = 0.
+    t_leng = len(their_history)
+    t_list = range(t_leng)
+    if t_leng == 0:
+        return 'b'
+    for item in t_list:
+        if their_history[item] == 'c':
+            total = total + 1.
+    t_avg = total / t_leng
+    if t_avg == 0.5:
+        return 'c'
+    else:
+        return 'b'
     
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
